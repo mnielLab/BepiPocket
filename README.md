@@ -4,4 +4,4 @@ TODO: Upload Code
 
 
 ## Graphical Abstract
-![Screenshot](GraphicalAbStract.png)
+![Screenshot](GraphicalAbstract.png)
