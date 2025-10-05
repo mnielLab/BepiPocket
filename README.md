@@ -37,7 +37,7 @@ $ conda install pip
 First, download requirements.txt file. Then,
 ```
 $ pip install -r requirements.txt # install package dependencies
-$ pip install git+https://github.com/mnielLab/BepiPocket-1.0.git # install source code directly with pip
+$ pip install git+https://github.com/mnielLab/BepiPocket-1.0.git
 ```
 ## Usage 
 
