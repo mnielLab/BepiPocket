@@ -1,7 +1,12 @@
 # BepiPocket
 
-TODO: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
-TODO: Upload DiscoTope-3.0 Code. Not sure if inverse folding environement used for DiscoTope-3.0 is compatible with Chai-1 package environment. Need to sort this out.
+
+
+
+
+### TODOS
+* *TODO*: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
+* *TODO*: Upload DiscoTope-3.0 Code. Not sure if inverse folding environement used for DiscoTope-3.0 is compatible with Chai-1 package environment. Need to sort this out.
 
 ## License 
 BepiPocket is a tool developed by the Health Tech section at Technical University of Denmark (DTU). The code and data can be used freely by academic groups for non-commercial purposes.
