@@ -1,4 +1,5 @@
 ### IMPORTS ###
+
 from pathlib import Path
 import sys
 MODULE_DIR = str( Path( Path(__file__).parent.resolve() ) )
@@ -15,9 +16,9 @@ from general_functions import load_pickle_file
 
 ### STATIC VARIABLES ###
 
-
-
 ascii_uppercase = list(string.ascii_uppercase)
+
+### FUNCTIONS ###
 
 def run_bepipred3_fasta(fasta_path, outdir, esm2_model_path=None, rm_esm2_encodings=True):
 
@@ -56,7 +57,7 @@ def bepipocket_chairun(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recy
                 If there is both a light and heavy chains, the two last entries should be for these two chains.
                 Their order does not matter.
                 If there is only a single antibody chain (nanobody), the last entry needs to be this chain. 
-                
+
     num_ab_chains: Default is 2 (light and heavy chain). If working with nanobody, set this to '1'.
 
     num_trunk_recycles=4, num_diffn_timesteps=200 are the default settings from Chai-1
@@ -216,12 +217,6 @@ def bepipocket_chairun(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recy
  
     outfile = open(outdir / "done.txt", "w")
     outfile.close()
-
-
-
-    
-
-
 
 def abag_make_pocket_restraints(epitope_residues, restraint_outfile, antibody_chain_letters, confidence="1.0",
                                 min_distance_angstrom="0.0", max_distance_angstrom="10.0"):

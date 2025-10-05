@@ -1,3 +1,5 @@
+### FUNCTIONS ###
+
 def read_accs_and_sequences_from_fasta(infile):
     """
     Input: readfile: Fasta file.

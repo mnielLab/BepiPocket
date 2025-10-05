@@ -1,3 +1,5 @@
+### IMPORTS ###
+
 from Bio.PDB import PDBParser, MMCIFParser, NeighborSearch, Selection, PDBIO
 import subprocess
 from pathlib import Path
@@ -6,6 +8,14 @@ import sys
 MODULE_DIR = str( Path( Path(__file__).parent.resolve() ) )
 sys.path.append(MODULE_DIR)
 AA3to1_DICT = {'ALA': 'A', 'CYS': 'C', 'ASP': 'D', 'GLU': 'E', 'PHE': 'F', 'GLY': 'G', 'HIS': 'H', 'ILE': 'I', 'LYS': 'K', 'LEU': 'L', 'MET': 'M', 'ASN': 'N', 'PRO': 'P', 'GLN': 'Q', 'ARG': 'R', 'SER': 'S', 'THR': 'T', 'VAL': 'V', 'TRP': 'W', 'TYR': 'Y'}
+
+### STATIC VARIABLES ###
+
+ROOT_DIRECTORY = Path( Path(__file__).parent.resolve() )
+MODELS_DIRECTORY = ROOT_DIRECTORY / "models"
+AB_IDENTIFY_HMM_MODELS = MODELS_DIRECTORY / "hmm_antibody_identification"
+
+### FUNCTIONS ###
 
 def identify_abag_with_hmm(abag_path, hmm_models_directory, tmp, pdb_id="foo", hmm_eval=float(1e-18), verbose=True, abseq_type_lookup=None):
     
@@ -127,8 +137,6 @@ def is_cif_file(file_path):
 
     except Exception: return False
 
-
-
 def read_pdb_structure(pdb_file, pdb_id="foo", modelnr=0, return_all_models = False):
         """
         pdb_id: PDB acession, string
@@ -171,8 +179,6 @@ def read_cif_structure(cif_file, pdb_id="foo", modelnr=0, return_all_models=Fals
     else:
         return structure[modelnr]
     
-
-
 def cif_to_pdb(cif_file, pdb_file, verbose=True):
     """
     Converts a CIF file to a PDB file using Biopython.
@@ -197,9 +203,6 @@ def cif_to_pdb(cif_file, pdb_file, verbose=True):
         if verbose: print(f"Successfully converted {cif_file} to {pdb_file}.")
     except Exception as e:
         print(f"An error occurred: {e}")
-
-
-
 
 def write_biopdb_chain_residues_to_fasta(chains, pdb_acc_name, tgt_file=None):
     """
@@ -243,7 +246,6 @@ def write_biopdb_chain_residues_to_fasta(chains, pdb_acc_name, tgt_file=None):
 
     return AA_seqs
 
-
 def get_and_remove_heteroatoms(chain):
     """
    Heteroatoms in the form of water and other solvents need to be removed from the chain.
@@ -273,7 +275,6 @@ def get_abag_interaction_data(ag_chains, ab_chains, return_bio_pdb_aas=False, at
             paratope_data.extend(paratope_d)
 
     return epitope_data, paratope_data
-
 
 def atom_neighbourhead_search_return_res(search_object, search_atoms, atom_radius=4):
     paired_interacting_residues = list()
@@ -348,8 +349,6 @@ def write_pdb_res_to_seq(residues):
 
     return AA_seq
 
-
-
 def get_epitope_patch_residues(pred_structure_file, pred_epitope_residue, antigen_seqidxs=None, patch_angradius=10):
 
     if is_pdb_file(pred_structure_file): pred_structure = read_pdb_structure(pred_structure_file)
@@ -389,8 +388,6 @@ def get_epitope_patch_residues(pred_structure_file, pred_epitope_residue, antige
 
 
     return search_residue_interacting_residues 
-
-
 
 def collect_epitope_contacts(pred_structure_files, antigen_seqidxs=None, epipara_aang_distance=4):
 

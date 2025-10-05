@@ -1,3 +1,5 @@
+### IMPORTS 
+
 import sys
 from pathlib import Path
 import pickle
@@ -5,6 +7,8 @@ import shutil
 import bisect
 MODULE_DIR = str( Path( Path(__file__).parent.resolve() ) )
 sys.path.append(MODULE_DIR)
+
+### FUNCTIONS ###
 
 def flatten(container):
     """
@@ -48,7 +52,6 @@ def load_pickle_file(infile_path):
         pickle_data = pickle.load(infile)
     return pickle_data
 
-
 def copy_stuff(source_files, tgt, add_to_filename="", silence=False):
     """
     Move source files to tgt
@@ -70,7 +73,6 @@ def copy_stuff(source_files, tgt, add_to_filename="", silence=False):
             if not silence: print("File already existed. Skipping")
 
         if not silence: print(f"Parsed {i+1} / {nr_source_files} to ({tgt})")
-
 
 def copy_stuff_v2(source_files, tgts, rm_source_files=False, add_to_filename=""):
     """
@@ -97,7 +99,6 @@ def copy_stuff_v2(source_files, tgts, rm_source_files=False, add_to_filename="")
 
         print(f"Parsed {i+1} / {nr_source_files} to ({tgt})")
 
-
 def copy_from_to_files(from_files, to_files, rm_after_copy=False):
     nr_files = len(from_files)
     for i in range(nr_files):
@@ -120,7 +121,6 @@ def copy_from_to_files(from_files, to_files, rm_after_copy=False):
                 print(f"Removed {from_file}") 
 
         else: print(f"Destination file with same name already exists: {to_file}. Skipping")
-
 
 def bin_data_left_inclusive(data, bins=[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], bin_size=None, bin_idx=1, return_index_dict=False):
     """
