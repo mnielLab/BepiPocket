@@ -1,12 +1,14 @@
 # BepiPocket
 
-
-
-
+Current deep learning methods, such as AlphaFold and Chai, can often create AbAg structures with high confidence and accuracy.
+However, these methods often fail to predict the correct antibody binding site, placing the antibody incorrectly on the antigen and converging on repeatedly predicting the same redundant binding mode.
+Varying seeds and diffusion samples does not guarantee that a diverse set of binding modes explored.
+**BepiPocket** is a simple approach for integrating B-cell epitope prediction tools, BepiPred-3.0 and DiscoTope-3.0, to guide antibody-epitope restraints during Chai-1 structure prediction.
+This vastly increase diversity of explored antibody binding modes as well enabling Chai-1 to find substantialy more accurate AbAg structures.
 
 ### TODOS
-* *TODO*: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
-* *TODO*: Upload DiscoTope-3.0 Code. Not sure if inverse folding environement used for DiscoTope-3.0 is compatible with Chai-1 package environment. Need to sort this out.
+* **TODO**: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
+* **TODO**: Upload DiscoTope-3.0 Code. Not sure if inverse folding environement used for DiscoTope-3.0 is compatible with Chai-1 package environment. Need to sort this out.
 
 ## License 
 BepiPocket is a tool developed by the Health Tech section at Technical University of Denmark (DTU). The code and data can be used freely by academic groups for non-commercial purposes.
