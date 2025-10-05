@@ -6,8 +6,6 @@ Varying seeds and diffusion samples does not guarantee that a diverse set of bin
 **BepiPocket** is a simple approach for integrating B-cell epitope prediction tools, **BepiPred-3.0** and **DiscoTope-3.0**, to guide antibody-epitope restraints during Chai-1 structure prediction.
 This vastly increase diversity of explored antibody binding sites as well as allowing Chai-1 to find substantialy more accurate AbAg structures with high confidence.
 
-Preprint link 
-
 ### TODOS
 * **TODO**: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
 * **TODO**: Upload DiscoTope-3.0 Code. Not sure if inverse folding environement used for DiscoTope-3.0 is compatible with Chai-1 package environment. Need to sort this out.
