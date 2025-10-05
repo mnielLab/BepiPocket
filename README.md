@@ -1,10 +1,12 @@
 # BepiPocket
 
-Current deep learning methods, such as AlphaFold and Chai, can often create AbAg structures with high confidence and accuracy.
+Current deep learning methods, such as AlphaFold and Chai, can often create antibody-antigen (AbAg) structures with high confidence and accuracy.
 However, these methods often fail to predict the correct antibody binding site, placing the antibody incorrectly on the antigen and converging on repeatedly predicting the same redundant binding mode.
 Varying seeds and diffusion samples does not guarantee that a diverse set of binding modes explored.
 **BepiPocket** is a simple approach for integrating B-cell epitope prediction tools, **BepiPred-3.0** and **DiscoTope-3.0**, to guide antibody-epitope restraints during Chai-1 structure prediction.
-This vastly increase diversity of explored antibody binding modes as well enabling Chai-1 to find substantialy more accurate AbAg structures.
+This vastly increase diversity of explored antibody binding sites as well as allowing Chai-1 to find substantialy more accurate AbAg structures with high confidence.
+
+Preprint link 
 
 ### TODOS
 * **TODO**: Upload MMseqs2 MSA Code. MSAs can be provide in the same format used as Chai-1 (.pqt). But are not automatically created on inference. Need to add this code
@@ -34,3 +36,8 @@ If you plan to use these tools for any for-profit application, you are required 
 ### Outputs
 
 ### Example
+
+## Cite
+If you found this tool useful in your research, please cite:<br>
+[Pocket Restraints Guided by B-Cell Epitope Prediction improves Chai-1 Antibody-Antigen Structure Modeling](https://doi.org/10.1101/2025.09.17.676770)
+
