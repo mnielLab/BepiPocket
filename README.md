@@ -8,7 +8,7 @@ BepiPocket is a tool developed by the Health Tech section at Technical Universit
 If you plan to use these tools for any for-profit application, you are required to obtain a separate license (contact Morten Nielsen, morni@dtu.dk).
 * If you use BepiPred-3.0 (BepiPocket) to guide to create antibody-epitope pockets, please get a BepiPred-3.0 license.
 * If you use DiscoTope-3.0 (DiscoPocket) to guide to create antibody-epitope pockets, please get a DiscoTope-3.0 license.
-* The tool uses Chai-1 to structural inference of antibody-antigen compexes. This tool is not open-source, and you are therefore also required to get license from Chai Discovery. 
+* The tool uses Chai-1 for structural inference of antibody-antigen compexes. This tool is not open-source, and you are therefore also required to get license from Chai Discovery. 
 
 ## Graphical Abstract
 ![Screenshot](GraphicalAbstract.png)
