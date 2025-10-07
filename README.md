@@ -38,14 +38,19 @@ $ pip install -r requirements.txt # install package dependencies
 $ pip install git+https://github.com/mnielLab/BepiPocket-1.0.git
 ```
 ## Usage 
+After installation, BepiPocket can be run with the script 'main.py'. 
 
-### Inputs
+### Inputs 
 
 ### Outputs
 
 ### Example
-
+Using the example fasta file, this code snippet does 4 runs, each producing 5 structures.
+The first run is without any antibody-epitope restraint, just using seed 0.
+The second, third and and fourth runs are made using antibody-epitope restraints construcetd with BepiPred-3.0. 
+```
+python main.py -i ./examples/2j88_ag_A_ab_L_H.fasta -o ./example_output/ -pred bepipocket -nr_runs 4
+```
 ## Cite
 If you found this tool useful in your research, please cite:<br>
 [Pocket Restraints Guided by B-Cell Epitope Prediction improves Chai-1 Antibody-Antigen Structure Modeling](https://doi.org/10.1101/2025.09.17.676770)
-
