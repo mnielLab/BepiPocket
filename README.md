@@ -47,7 +47,7 @@ After installation, BepiPocket can be run with the script 'main.py'.
 ### Example
 Using the example fasta file, this code snippet does 4 runs, each producing 5 structures.
 The first run is without any antibody-epitope restraint, just using seed 0.
-The second, third and and fourth runs are made using antibody-epitope restraints construcetd with BepiPred-3.0. 
+The second, third and and fourth runs are made using antibody-epitope restraints constructed with BepiPred-3.0. 
 ```
 python main.py -i ./examples/2j88_ag_A_ab_L_H.fasta -o ./example_output/ -pred bepipocket -nr_runs 4
 ```
