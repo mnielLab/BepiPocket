@@ -1,7 +1,7 @@
 ### IMPORTS AND STATIC STUFF ###
-from chaiabag.normal_chairun import normal_run
-from chaiabag.bepipocket_run import bepipocket_run
-from chaiabag.discopocket_run import discopocket_run
+from bepipocket.normal_run import normal_run
+from bepipocket.bepipocket_run import bepipocket_run
+from bepipocket.discopocket_run import discopocket_run
 from pathlib import Path
 import argparse 
 
@@ -34,19 +34,19 @@ msa_directory = args.msa_directory
 
 # chai-1 normal prediction mode 
 if pred == "normal":
-    normal_chairun(fasta_file, out_dir, overwrite_earlier_jobcontent=False, seeds=seeds, msa_directory=msa_directory)
+    normal_run(fasta_file, out_dir, overwrite_earlier_jobcontent=False, seeds=seeds, msa_directory=msa_directory)
 
 # chai-1 restraint prediction mode (User defined restraints, as described in Chai-1 documentation)
 elif pred == "restraint":
-    normal_chairun(fasta_file, out_dir, restraint_file=restraint_file, overwrite_earlier_jobcontent=False, seeds=seeds, msa_directory=msa_directory)
+    normal_run(fasta_file, out_dir, restraint_file=restraint_file, overwrite_earlier_jobcontent=False, seeds=seeds, msa_directory=msa_directory)
 
 # chai-1 bepipocket (use BepiPred-3.0 to guide antibody-epitope restraints)
 elif pred == "bepipocket":
-    bepipocket_run(fasta_file, out_dir, patch_mode=patch_mode, bepipredmap_runs=seeds, bp3_score_lookup=bp3scores, maxcover_mode=maxcover_mode, msa_directory=msa_directory)
+    bepipocket_run(fasta_file, out_dir, patch_mode=patch_mode, bepipredmap_runs=seeds, bp3_score_lookup=bp3scores, msa_directory=msa_directory)
 
 # chai-1 discopocket (use DiscoTope-3.0 to guide antibody-epitope restraints)
 #TODO 
 # elif pred == "discopocket":
 #     abag_disco_score_key = out_dir.name.split("_discotopemap")[0]
 #     discopocket_chairun(fasta_file, out_dir, patch_mode=patch_mode, discotopemap_runs=seeds,
-#                          discotope3_score_lookup = disco3scores, maxcover_mode=maxcover_mode, msa_directory=msa_directory, abag_disco_score_key=abag_disco_score_key)
+#                          discotope3_score_lookup = disco3scores, msa_directory=msa_directory, abag_disco_score_key=abag_disco_score_key)

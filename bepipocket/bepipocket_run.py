@@ -45,7 +45,7 @@ def run_bepipred3_fasta(fasta_path, outdir, esm2_model_path=None, rm_esm2_encodi
     return antigen_sequences, avg_ensemble_probs
     
 
-def bepipocket_chairun(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recycles=4, num_diffn_timesteps=200,
+def bepipocket_run(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recycles=4, num_diffn_timesteps=200,
                         overwrite_earlier_jobcontent=False, antigen_seqidxs=None, bepipredmap_runs=5, patch_mode=False, max_distance_angstrom="10.0",
                         patch_angradius=6.0, max_patch_size=4, maxcover_mode=False,
                         epipara_aang_distance=5, msa_directory=None, num_ab_chains=2):
