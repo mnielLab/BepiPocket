@@ -15,7 +15,7 @@ parser.add_argument("-pred", action="store", choices=["normal", "restraint", "be
 parser.add_argument("-nr_runs", action="store", dest="nr_runs", type=int, default=6, help="Number of runs for Chai-1 structure modelling.")
 parser.add_argument("-bp3scores", action="store", dest="bp3scores", default=None, type=Path, help="Path to dict containing precomputed BepiPred-3.0 scores. {FGKAJ...:array([0.4,,0.3,0.5,0.6,0.8...])..}.")
 parser.add_argument("-patch_mode", action="store_true", dest="patch_mode", help="Use surface patch with high epitope propensity for restraint runs for BepiPocket or DiscoPocket. Note: This approach has not been benchmarked yet).")
-#parser.add_argument("-disco3scores", action="store", dest="disco3scores", default=None, type=Path, help="Path to dict containing discotope-3 scores")
+#parser.add_argument("-disco3scores", action="store", dest="disco3scores", default=None, type=Path, help="Path to dict containing precomputed discotope-3 scores")
 parser.add_argument("-msa_directory", action="store", dest="msa_directory", default=None, type=Path, help="Look for MSA .pqt files with sequence hash filenames mathcing query sequences in this directory.")
 
 # set variables
@@ -27,9 +27,8 @@ restraint_file = args.restraint_file
 nr_runs= args.nr_runs
 
 bp3scores = args.bp3scores
-disco3scores = args.disco3scores
+#disco3scores = args.disco3scores #TODO
 patch_mode = args.patch_mode
-maxcover_mode = args.maxcover_mode
 msa_directory = args.msa_directory
 
 # chai-1 normal prediction mode 

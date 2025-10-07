@@ -123,6 +123,7 @@ def bepipocket_run(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recycles
         bp3_score_lookup = load_pickle_file(bp3_score_lookup_path)
     # compute bepipred3 scores
     else:
+        print("Computing BepiPred-3.0 scores")
         bp3scored_seqs, bp3_scores = run_bepipred3_fasta(fasta_path, outdir) 
         bp3_score_lookup = {k:v for k, v in zip(bp3scored_seqs, bp3_scores)}
 
@@ -154,7 +155,7 @@ def bepipocket_run(fasta_path, outdir, bp3_score_lookup=None, num_trunk_recycles
     restraintsdir = outdir / "restraints"
     if not restraintsdir.is_dir(): restraintsdir.mkdir(parents=True)
     
-    for i in range(nr_runs):
+    for i in range(nr_runs - 1):
 
         out_path = outdir / f"bepipredmap{i}"
 
